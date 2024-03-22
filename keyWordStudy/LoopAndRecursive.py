@@ -47,6 +47,8 @@ def useOfLoop():
             print('}')
         print(i)
     dividingLine()
+    
+    return
 
 def multipleLoop():
     for i in range(2):
@@ -67,6 +69,8 @@ def breakAndContinue():
             break
         print(i)
     dividingLine()
+    
+    return
 
 def useElseInLoopFunction():
     for x in [1, 2, 3]:
@@ -82,6 +86,8 @@ def useElseInLoopFunction():
     else:
         print("끝")
     dividingLine()
+    
+    return
 
 def loopFunctionInList():
     a = 'abcde'
@@ -108,7 +114,11 @@ def loopFunctionInList():
                     for val2 in a2 if val2 < 7]
     print (b)
     dividingLine()
+    
+    return
 
+def useOfRecursive():
+    return
 
 useOfLoop()
 multipleLoop()
