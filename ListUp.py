@@ -16,7 +16,7 @@ def listUp(a, n):
     listUp(a, n-1)
     #===============탈출 명시 ==========
     if len(a) == len(listUpList):
-        return listUpList
+        return
     #=============== 진행 명시 =========
     for i in range(len(listUpList)):
         if a[n] >= listUpList[i]:
@@ -43,6 +43,7 @@ def listUp2(a, n, listUpList):
     listUpList.append(a[n])  # 삽입할 위치를 찾지 못한 경우, 리스트의 맨 끝에 값을 추가
 
 print(inputList)
+
 def mySort(inputList):
     oldList = inputList.copy()
     for i in range(len(inputList) - 1):
@@ -67,7 +68,31 @@ def mySort(inputList):
     print("----------다시----------")
     mySort(inputList)
 
-mySort(inputList)
+def mySort(inputList, n):
+    if n < 0:
+        return inputList
+    inputList = mySort(inputList, n-1)
+    
+    print("oldList is ", end="")
+    print(inputList)
+    
+    for i in range(n):
+        print(f"i = {i}")
+        if inputList[i] < inputList[i + 1]:
+            smaller = inputList[i]
+            inputList[i] = inputList[i + 1]
+            inputList [i + 1] = smaller
+            print("change!: ", end="")
+            print(inputList)
+            return inputList
+        else:
+            print("no change: ", end="")
+            print(inputList)
+    
+    return inputList
+
+
+print(mySort(inputList, len(inputList)-1))
 
 
 listUp(inputList, n)
