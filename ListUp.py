@@ -42,6 +42,33 @@ def listUp2(a, n, listUpList):
             return
     listUpList.append(a[n])  # 삽입할 위치를 찾지 못한 경우, 리스트의 맨 끝에 값을 추가
 
+print(inputList)
+def mySort(inputList):
+    oldList = inputList.copy()
+    for i in range(len(inputList) - 1):
+        print(f"i = {i}")
+        if inputList[i] > inputList[i + 1]:
+            bigger = inputList[i]
+            inputList[i] = inputList[i + 1]
+            inputList [i + 1] = bigger
+            print("change!: ", end="")
+            print(inputList)
+        else:
+            print("no change: ", end="")
+            print(inputList)
+    print("oldList is ", end="")
+    print(oldList)
+    print("now numList is ", end="")
+    print(inputList)
+    if oldList == inputList:
+        print("----------끝----------")
+        print(inputList)
+        return
+    print("----------다시----------")
+    mySort(inputList)
+
+mySort(inputList)
+
 
 listUp(inputList, n)
 print(listUpList)
